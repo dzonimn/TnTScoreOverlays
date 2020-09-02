@@ -24,8 +24,15 @@
                 user-select: none;
             }
 
-            #streamerinput {
+            #titleselector {
                 font-family: Arial, Helvetica, sans-serif;
+                color: white;
+            }
+
+            #playerselector {
+                font-family: Arial, Helvetica, sans-serif;
+                color: white;
+                width: 350px;
             }
 
             #scoreoverlaycontainer {
@@ -123,10 +130,6 @@
                 top: 191px;
             }
 
-            #streamerinput {
-                color: white;
-            }
-
             .column {
                 flex:50%;
             }
@@ -139,251 +142,262 @@
     </head>
     <body>
         <!--the image and scoreboard text-->
-        <div id="scoreoverlaycontainer" oncontextmenu="return false">
-            <img src="images/scoreboard.png" width=450px>
-            <div id="title"></div>
-            <div id="p1icon"></div>
-            <div id="p2icon"></div>
-            <div id="p1name">Click name to change faction</div>
-            <div id="p2name">Click score to add score</div>
-            <input type="button" id="p1score" onclick="incrementp1Score()" oncontextmenu="decrementp1Score()" value="0">
-            <input type="button" id="p2score" onclick="incrementp2Score()" oncontextmenu="decrementp2Score()" value="0">
-            <div id="bestof">BEST OF </div>
-          </div>
-
-        <form id="streamerinput" name="streamerinput">
-            <br>
-            <p>
-            Title Selector: <br>
-            (changes the header text and filters dropdown boxes below) <br>
-            <div class="row">
+        <div class="row">
+            <div class="column">
+                
+                <div id="scoreoverlaycontainer" oncontextmenu="return false">
+                    <img src="images/scoreboard.png" width=450px>
+                    <div id="title"></div>
+                    <div id="p1icon"></div>
+                    <div id="p2icon"></div>
+                    <div id="p1name">Click name to change faction</div>
+                    <div id="p2name">Click score to add score</div>
+                    <input type="button" id="p1score" onclick="incrementp1Score()" oncontextmenu="decrementp1Score()" value="0">
+                    <input type="button" id="p2score" onclick="incrementp2Score()" oncontextmenu="decrementp2Score()" value="0">
+                    <div id="bestof">BEST OF </div>
+                  </div>
+        
+                <!-- <form id="streamerinput" name="streamerinput"> -->
+                    <div id="titleselector">
+                        <p>
+                        Title Selector: <br>
+                        (changes the header text and filters dropdown boxes below) <br>
+                        <div class="row">
+                            <div class="column">
+                                <input type="radio" id="premier" name="league" value="Premier Division" onchange="leagueChange()">
+                                <label for="premier">Premier</label><br>
+                                <input type="radio" id="premierrel" name="league" value="Premier Relegation" onchange="leagueChange()">
+                                <label for="premierrel">Premier Relegations</label><br>
+                                <input type="radio" id="intermediate" name="league" value="Inter Division" onchange="leagueChange()">
+                                <label for="intermediate">Intermediate</label><br>
+                                <input type="radio" id="beginner" name="league" value="Beginner Division" onchange="leagueChange()">
+                                <label for="beginner">Beginner</label><br>
+                                <input type="radio" id="lowintermediate" name="league" value="Low Inter Division" onchange="leagueChange()">
+                                <label for="lowintermediate">Lower Intermediate</label><br>
+                                <input type="radio" id="noleag" name="league" value="" onchange="leagueChange()" checked>
+                                <label for="noleag">None</label><br><br>
+                            </div>
+                            
+                            <div class="column">
+                                <input type="radio" id="qf" name="stage" value=" - Quarter Final" onchange="leagueChange()">
+                                <label for="qf">Quarter Final</label><br>
+                                <input type="radio" id="sf" name="stage" value=" - Semi Final" onchange="leagueChange()">
+                                <label for="sf">Semi Final</label><br>
+                                <input type="radio" id="gf" name="stage" value=" - Grand Final" onchange="leagueChange()">
+                                <label for="gf">Grand Final</label><br>
+                                <input type="radio" id="nostag" name="stage" value="" onchange="leagueChange()" checked>
+                                <label for="nostag">None</label>
+                            </div>
+            
+                            <div class="column">
+                                Best of: <br>
+                                <input type="radio" id="bo3" name="bo" value="3" onchange="boChange()">
+                                <label for="bo3">3</label><br>
+                                <input type="radio" id="bo5" name="bo" value="5" onchange="boChange()">
+                                <label for="bo5">5</label><br>
+                                <input type="radio" id="bo7" name="bo" value="7" onchange="boChange()">
+                                <label for="bo7">7</label><br>
+                                <input type="radio" id="bo9" name="bo" value="9" onchange="boChange()">
+                                <label for="bo9">9</label>
+                            </div>
+            
+                        </div>
+                        </p>
+                    </div>
+        
+            </div>
                 <div class="column">
-                    <input type="radio" id="premier" name="league" value="Premier Division" onchange="leagueChange()">
-                    <label for="premier">Premier</label><br>
-                    <input type="radio" id="premierrel" name="league" value="Premier Relegation" onchange="leagueChange()">
-                    <label for="premierrel">Premier Relegations</label><br>
-                    <input type="radio" id="intermediate" name="league" value="Inter Division" onchange="leagueChange()">
-                    <label for="intermediate">Intermediate</label><br>
-                    <input type="radio" id="beginner" name="league" value="Beginner Division" onchange="leagueChange()">
-                    <label for="beginner">Beginner</label><br>
-                    <input type="radio" id="lowintermediate" name="league" value="Low Inter Division" onchange="leagueChange()">
-                    <label for="lowintermediate">Lower Intermediate</label><br>
-                    <input type="radio" id="noleag" name="league" value="" onchange="leagueChange()" checked>
-                    <label for="noleag">None</label><br><br>
+                    
+                    <div id="playerselector">
+                        <p>
+                        <div class="row">
+                        <div class="column">
+                        Player 1: <br>
+                        <div class="premierplayer">
+                            <input type="radio" name="player1" id="Arilou" onchange="changePlayer1()">
+                            <label for="Arilou">Arilou</label><br>
+                            <input type="radio" name="player1" id="Jakobi" onchange="changePlayer1()">
+                            <label for="Jakobi">Jakobi</label><br>
+                            <input type="radio" name="player1" id="JetEriksen" onchange="changePlayer1()">
+                            <label for="JetEriksen">JetEriksen</label><br>
+                            <input type="radio" name="player1" id="Melvinfro" onchange="changePlayer1()">
+                            <label for="Melvinfro">Melvinfro</label><br>
+                            <input type="radio" name="player1" id="Mishi" onchange="changePlayer1()">
+                            <label for="Mishi">Mishi</label><br>
+                            <input type="radio" name="player1" id="mocaccino" onchange="changePlayer1()">
+                            <label for="mocaccino">mocaccino</label><br>
+                            <input type="radio" name="player1" id="qq" onchange="changePlayer1()">
+                            <label for="qq">qq</label><br>
+                            <input type="radio" name="player1" id="The Gentleman" onchange="changePlayer1()">
+                            <label for="The Gentleman">The Gentleman</label><br>
+                        </div>
+                        <div class="interplayer">
+                            <input type="radio" name="player1" id="EELuminatus" onchange="changePlayer1()">
+                            <label for="EELuminatus">EELuminatus</label><br>
+                            <input type="radio" name="player1" id="Epicosity" onchange="changePlayer1()">
+                            <label for="Epicosity">Epicosity</label><br>
+                            <input type="radio" name="player1" id="Heartseed" onchange="changePlayer1()">
+                            <label for="Heartseed">Heartseed</label><br>
+                            <input type="radio" name="player1" id="Meek" onchange="changePlayer1()">
+                            <label for="Meek">Meek</label><br>
+                            <input type="radio" name="player1" id="Protokam" onchange="changePlayer1()">
+                            <label for="Protokam">Protokam</label><br>
+                            <input type="radio" name="player1" id="Satoros" onchange="changePlayer1()">
+                            <label for="Satoros">Satoros</label><br>
+                            <input type="radio" name="player1" id="Sulomon" onchange="changePlayer1()">
+                            <label for="Sulomon">Sulomon</label><br>
+                            <input type="radio" name="player1" id="Trumpet" onchange="changePlayer1()">
+                            <label for="Trumpet">Trumpet</label><br>
+                        </div>
+                        <div class="beginplayer">
+                            <input type="radio" name="player1" id="boomer549" onchange="changePlayer1()">
+                            <label for="boomer549">boomer549</label><br>
+                            <input type="radio" name="player1" id="Daffy" onchange="changePlayer1()">
+                            <label for="Daffy">Daffy</label><br>
+                            <input type="radio" name="player1" id="elverdulerojorge" onchange="changePlayer1()">
+                            <label for="elverdulerojorge">elverdulerojorge</label><br>
+                            <input type="radio" name="player1" id="Horus the Holy" onchange="changePlayer1()">
+                            <label for="Horus the Holy">Horus the Holy</label><br>
+                            <input type="radio" name="player1" id="Kin_Replica" onchange="changePlayer1()">
+                            <label for="Kin_Replica">Kin_Replica</label><br>
+                            <input type="radio" name="player1" id="niccolaccio" onchange="changePlayer1()">
+                            <label for="niccolaccio">niccolaccio</label><br>
+                            <input type="radio" name="player1" id="Whitexcat" onchange="changePlayer1()">
+                            <label for="Whitexcat">Whitexcat</label><br>
+                            <input type="radio" name="player1" id="Wyld Kin" onchange="changePlayer1()">
+                            <label for="Wyld Kin">Wyld Kin</label><br>
+                        </div>
+                        <div class="relplayer">
+                            <input type="radio" name="player1" id="Big Pimpintosh" onchange="changePlayer1()">
+                            <label for="Big Pimpintosh">Big Pimpintosh</label><br>
+                            <input type="radio" name="player1" id="Kerpa" onchange="changePlayer1()">
+                            <label for="Kerpa">Kerpa</label><br>
+                            <input type="radio" name="player1" id="Necromanticer" onchange="changePlayer1()">
+                            <label for="Necromanticer">Necromanticer</label><br>
+                            <input type="radio" name="player1" id="Weasel" onchange="changePlayer1()">
+                            <label for="Weasel">Weasel</label><br>
+                        </div>
+                        <div class="lowinterplayer">
+                            <input type="radio" name="player1" id="Delthius" onchange="changePlayer1()">
+                            <label for="Delthius">Delthius</label><br>
+                            <input type="radio" name="player1" id="dzon" onchange="changePlayer1()">
+                            <label for="dzon">dzon</label><br>
+                            <input type="radio" name="player1" id="FleurDeLys" onchange="changePlayer1()">
+                            <label for="FleurDeLys">FleurDeLys</label><br>
+                            <input type="radio" name="player1" id="Kolaru" onchange="changePlayer1()">
+                            <label for="Kolaru">Kolaru</label><br>
+                            <input type="radio" name="player1" id="octapi" onchange="changePlayer1()">
+                            <label for="octapi">octapi</label><br>
+                            <input type="radio" name="player1" id="Pawulon" onchange="changePlayer1()">
+                            <label for="Pawulon">Pawulon</label><br>
+                            <input type="radio" name="player1" id="roman" onchange="changePlayer1()">
+                            <label for="roman">roman</label><br>
+                            <input type="radio" name="player1" id="Stoecker" onchange="changePlayer1()">
+                            <label for="Stoecker">Stoecker</label><br>
+                        </div>
+                        </div>
+            
+                        <div class="column">
+                        Player 2: <br>
+                        <div class="premierplayer">
+                            <input type="radio" name="player2" id="Arilou2" onchange="changePlayer2()">
+                            <label for="Arilou2">Arilou</label><br>
+                            <input type="radio" name="player2" id="Jakobi2" onchange="changePlayer2()">
+                            <label for="Jakobi2">Jakobi</label><br>
+                            <input type="radio" name="player2" id="JetEriksen2" onchange="changePlayer2()">
+                            <label for="JetEriksen2">JetEriksen</label><br>
+                            <input type="radio" name="player2" id="Melvinfro2" onchange="changePlayer2()">
+                            <label for="Melvinfro2">Melvinfro</label><br>
+                            <input type="radio" name="player2" id="Mishi2" onchange="changePlayer2()">
+                            <label for="Mishi2">Mishi</label><br>
+                            <input type="radio" name="player2" id="mocaccino2" onchange="changePlayer2()">
+                            <label for="mocaccino2">mocaccino</label><br>
+                            <input type="radio" name="player2" id="qq2" onchange="changePlayer2()">
+                            <label for="qq2">qq</label><br>
+                            <input type="radio" name="player2" id="The Gentleman2" onchange="changePlayer2()">
+                            <label for="The Gentleman2">The Gentleman</label><br>
+                        </div>
+                        <div class="interplayer">
+                            <input type="radio" name="player2" id="EELuminatus2" onchange="changePlayer2()">
+                            <label for="EELuminatus2">EELuminatus</label><br>
+                            <input type="radio" name="player2" id="Epicosity2" onchange="changePlayer2()">
+                            <label for="Epicosity2">Epicosity</label><br>
+                            <input type="radio" name="player2" id="Heartseed2" onchange="changePlayer2()">
+                            <label for="Heartseed2">Heartseed</label><br>
+                            <input type="radio" name="player2" id="Meek2" onchange="changePlayer2()">
+                            <label for="Meek2">Meek</label><br>
+                            <input type="radio" name="player2" id="Protokam2" onchange="changePlayer2()">
+                            <label for="Protokam2">Protokam</label><br>
+                            <input type="radio" name="player2" id="Satoros2" onchange="changePlayer2()">
+                            <label for="Satoros2">Satoros</label><br>
+                            <input type="radio" name="player2" id="Sulomon2" onchange="changePlayer2()">
+                            <label for="Sulomon2">Sulomon</label><br>
+                            <input type="radio" name="player2" id="Trumpet2" onchange="changePlayer2()">
+                            <label for="Trumpet2">Trumpet</label><br>
+                        </div>
+                        <div class="beginplayer">
+                            <input type="radio" name="player2" id="boomer5492" onchange="changePlayer2()">
+                            <label for="boomer5492">boomer549</label><br>
+                            <input type="radio" name="player2" id="Daffy2" onchange="changePlayer2()">
+                            <label for="Daffy2">Daffy</label><br>
+                            <input type="radio" name="player2" id="elverdulerojorge2" onchange="changePlayer2()">
+                            <label for="elverdulerojorge2">elverdulerojorge</label><br>
+                            <input type="radio" name="player2" id="Horus the Holy2" onchange="changePlayer2()">
+                            <label for="Horus the Holy2">Horus the Holy</label><br>
+                            <input type="radio" name="player2" id="Kin_Replica2" onchange="changePlayer2()">
+                            <label for="Kin_Replica2">Kin_Replica</label><br>
+                            <input type="radio" name="player2" id="niccolaccio2" onchange="changePlayer2()">
+                            <label for="niccolaccio2">niccolaccio</label><br>
+                            <input type="radio" name="player2" id="Whitexcat2" onchange="changePlayer2()">
+                            <label for="Whitexcat2">Whitexcat</label><br>
+                            <input type="radio" name="player2" id="Wyld Kin2" onchange="changePlayer2()">
+                            <label for="Wyld Kin2">Wyld Kin</label><br>
+                        </div>
+                        <div class="relplayer">
+                            <input type="radio" name="player2" id="Big Pimpintosh2" onchange="changePlayer2()">
+                            <label for="Big Pimpintosh2">Big Pimpintosh</label><br>
+                            <input type="radio" name="player2" id="Kerpa2" onchange="changePlayer2()">
+                            <label for="Kerpa2">Kerpa</label><br>
+                            <input type="radio" name="player2" id="Necromanticer2" onchange="changePlayer2()">
+                            <label for="Necromanticer2">Necromanticer</label><br>
+                            <input type="radio" name="player2" id="Weasel2" onchange="changePlayer2()">
+                            <label for="Weasel2">Weasel</label><br>
+                        </div>
+                        <div class="lowinterplayer">
+                            <input type="radio" name="player2" id="Delthius2" onchange="changePlayer2()">
+                            <label for="Delthius2">Delthius</label><br>
+                            <input type="radio" name="player2" id="dzon2" onchange="changePlayer2()">
+                            <label for="dzon2">dzon</label><br>
+                            <input type="radio" name="player2" id="FleurDeLys2" onchange="changePlayer2()">
+                            <label for="FleurDeLys2">FleurDeLys</label><br>
+                            <input type="radio" name="player2" id="Kolaru2" onchange="changePlayer2()">
+                            <label for="Kolaru2">Kolaru</label><br>
+                            <input type="radio" name="player2" id="octapi2" onchange="changePlayer2()">
+                            <label for="octapi2">octapi</label><br>
+                            <input type="radio" name="player2" id="Pawulon2" onchange="changePlayer2()">
+                            <label for="Pawulon2">Pawulon</label><br>
+                            <input type="radio" name="player2" id="roman2" onchange="changePlayer2()">
+                            <label for="roman2">roman</label><br>
+                            <input type="radio" name="player2" id="Stoecker2" onchange="changePlayer2()">
+                            <label for="Stoecker2">Stoecker</label><br>
+                        </div>
+                        </div>
+                        
+                    </div>
+                        <br>
+                        <button type="button" onclick=resetScores()>Reset Score</button>
+                        <br>
+                    </p>
+                    </div>
                 </div>
                 
-                <div class="column">
-                    <input type="radio" id="qf" name="stage" value=" - Quarter Final" onchange="leagueChange()">
-                    <label for="qf">Quarter Final</label><br>
-                    <input type="radio" id="sf" name="stage" value=" - Semi Final" onchange="leagueChange()">
-                    <label for="sf">Semi Final</label><br>
-                    <input type="radio" id="gf" name="stage" value=" - Grand Final" onchange="leagueChange()">
-                    <label for="gf">Grand Final</label><br>
-                    <input type="radio" id="nostag" name="stage" value="" onchange="leagueChange()" checked>
-                    <label for="nostag">None</label>
-                </div>
-
-                <div class="column">
-                    Best of: <br>
-                    <input type="radio" id="bo3" name="bo" value="3" onchange="boChange()">
-                    <label for="bo3">3</label><br>
-                    <input type="radio" id="bo5" name="bo" value="5" onchange="boChange()">
-                    <label for="bo5">5</label><br>
-                    <input type="radio" id="bo7" name="bo" value="7" onchange="boChange()">
-                    <label for="bo7">7</label><br>
-                    <input type="radio" id="bo9" name="bo" value="9" onchange="boChange()">
-                    <label for="bo9">9</label>
-                </div>
-
-            </div>
-            </p>
-
-            <p>
-            <div class="row">
-            <div class="column">
-            Player 1: <br>
-            <div class="premierplayer">
-                <input type="radio" name="player1" id="Arilou" onchange="changePlayer1()">
-                <label for="Arilou">Arilou</label><br>
-                <input type="radio" name="player1" id="Jakobi" onchange="changePlayer1()">
-                <label for="Jakobi">Jakobi</label><br>
-                <input type="radio" name="player1" id="JetEriksen" onchange="changePlayer1()">
-                <label for="JetEriksen">JetEriksen</label><br>
-                <input type="radio" name="player1" id="Melvinfro" onchange="changePlayer1()">
-                <label for="Melvinfro">Melvinfro</label><br>
-                <input type="radio" name="player1" id="Mishi" onchange="changePlayer1()">
-                <label for="Mishi">Mishi</label><br>
-                <input type="radio" name="player1" id="mocaccino" onchange="changePlayer1()">
-                <label for="mocaccino">mocaccino</label><br>
-                <input type="radio" name="player1" id="qq" onchange="changePlayer1()">
-                <label for="qq">qq</label><br>
-                <input type="radio" name="player1" id="The Gentleman" onchange="changePlayer1()">
-                <label for="The Gentleman">The Gentleman</label><br>
-            </div>
-            <div class="interplayer">
-                <input type="radio" name="player1" id="EELuminatus" onchange="changePlayer1()">
-                <label for="EELuminatus">EELuminatus</label><br>
-                <input type="radio" name="player1" id="Epicosity" onchange="changePlayer1()">
-                <label for="Epicosity">Epicosity</label><br>
-                <input type="radio" name="player1" id="Heartseed" onchange="changePlayer1()">
-                <label for="Heartseed">Heartseed</label><br>
-                <input type="radio" name="player1" id="Meek" onchange="changePlayer1()">
-                <label for="Meek">Meek</label><br>
-                <input type="radio" name="player1" id="Protokam" onchange="changePlayer1()">
-                <label for="Protokam">Protokam</label><br>
-                <input type="radio" name="player1" id="Satoros" onchange="changePlayer1()">
-                <label for="Satoros">Satoros</label><br>
-                <input type="radio" name="player1" id="Sulomon" onchange="changePlayer1()">
-                <label for="Sulomon">Sulomon</label><br>
-                <input type="radio" name="player1" id="Trumpet" onchange="changePlayer1()">
-                <label for="Trumpet">Trumpet</label><br>
-            </div>
-            <div class="beginplayer">
-                <input type="radio" name="player1" id="boomer549" onchange="changePlayer1()">
-                <label for="boomer549">boomer549</label><br>
-                <input type="radio" name="player1" id="Daffy" onchange="changePlayer1()">
-                <label for="Daffy">Daffy</label><br>
-                <input type="radio" name="player1" id="elverdulerojorge" onchange="changePlayer1()">
-                <label for="elverdulerojorge">elverdulerojorge</label><br>
-                <input type="radio" name="player1" id="Horus the Holy" onchange="changePlayer1()">
-                <label for="Horus the Holy">Horus the Holy</label><br>
-                <input type="radio" name="player1" id="Kin_Replica" onchange="changePlayer1()">
-                <label for="Kin_Replica">Kin_Replica</label><br>
-                <input type="radio" name="player1" id="niccolaccio" onchange="changePlayer1()">
-                <label for="niccolaccio">niccolaccio</label><br>
-                <input type="radio" name="player1" id="Whitexcat" onchange="changePlayer1()">
-                <label for="Whitexcat">Whitexcat</label><br>
-                <input type="radio" name="player1" id="Wyld Kin" onchange="changePlayer1()">
-                <label for="Wyld Kin">Wyld Kin</label><br>
-            </div>
-            <div class="relplayer">
-                <input type="radio" name="player1" id="Big Pimpintosh" onchange="changePlayer1()">
-                <label for="Big Pimpintosh">Big Pimpintosh</label><br>
-                <input type="radio" name="player1" id="Kerpa" onchange="changePlayer1()">
-                <label for="Kerpa">Kerpa</label><br>
-                <input type="radio" name="player1" id="Necromanticer" onchange="changePlayer1()">
-                <label for="Necromanticer">Necromanticer</label><br>
-                <input type="radio" name="player1" id="Weasel" onchange="changePlayer1()">
-                <label for="Weasel">Weasel</label><br>
-            </div>
-            <div class="lowinterplayer">
-                <input type="radio" name="player1" id="Delthius" onchange="changePlayer1()">
-                <label for="Delthius">Delthius</label><br>
-                <input type="radio" name="player1" id="dzon" onchange="changePlayer1()">
-                <label for="dzon">dzon</label><br>
-                <input type="radio" name="player1" id="FleurDeLys" onchange="changePlayer1()">
-                <label for="FleurDeLys">FleurDeLys</label><br>
-                <input type="radio" name="player1" id="Kolaru" onchange="changePlayer1()">
-                <label for="Kolaru">Kolaru</label><br>
-                <input type="radio" name="player1" id="octapi" onchange="changePlayer1()">
-                <label for="octapi">octapi</label><br>
-                <input type="radio" name="player1" id="Pawulon" onchange="changePlayer1()">
-                <label for="Pawulon">Pawulon</label><br>
-                <input type="radio" name="player1" id="roman" onchange="changePlayer1()">
-                <label for="roman">roman</label><br>
-                <input type="radio" name="player1" id="Stoecker" onchange="changePlayer1()">
-                <label for="Stoecker">Stoecker</label><br>
-            </div>
-            </div>
-
-            <div class="column">
-            Player 2: <br>
-            <div class="premierplayer">
-                <input type="radio" name="player2" id="Arilou2" onchange="changePlayer2()">
-                <label for="Arilou2">Arilou</label><br>
-                <input type="radio" name="player2" id="Jakobi2" onchange="changePlayer2()">
-                <label for="Jakobi2">Jakobi</label><br>
-                <input type="radio" name="player2" id="JetEriksen2" onchange="changePlayer2()">
-                <label for="JetEriksen2">JetEriksen</label><br>
-                <input type="radio" name="player2" id="Melvinfro2" onchange="changePlayer2()">
-                <label for="Melvinfro2">Melvinfro</label><br>
-                <input type="radio" name="player2" id="Mishi2" onchange="changePlayer2()">
-                <label for="Mishi2">Mishi</label><br>
-                <input type="radio" name="player2" id="mocaccino2" onchange="changePlayer2()">
-                <label for="mocaccino2">mocaccino</label><br>
-                <input type="radio" name="player2" id="qq2" onchange="changePlayer2()">
-                <label for="qq2">qq</label><br>
-                <input type="radio" name="player2" id="The Gentleman2" onchange="changePlayer2()">
-                <label for="The Gentleman2">The Gentleman</label><br>
-            </div>
-            <div class="interplayer">
-                <input type="radio" name="player2" id="EELuminatus2" onchange="changePlayer2()">
-                <label for="EELuminatus2">EELuminatus</label><br>
-                <input type="radio" name="player2" id="Epicosity2" onchange="changePlayer2()">
-                <label for="Epicosity2">Epicosity</label><br>
-                <input type="radio" name="player2" id="Heartseed2" onchange="changePlayer2()">
-                <label for="Heartseed2">Heartseed</label><br>
-                <input type="radio" name="player2" id="Meek2" onchange="changePlayer2()">
-                <label for="Meek2">Meek</label><br>
-                <input type="radio" name="player2" id="Protokam2" onchange="changePlayer2()">
-                <label for="Protokam2">Protokam</label><br>
-                <input type="radio" name="player2" id="Satoros2" onchange="changePlayer2()">
-                <label for="Satoros2">Satoros</label><br>
-                <input type="radio" name="player2" id="Sulomon2" onchange="changePlayer2()">
-                <label for="Sulomon2">Sulomon</label><br>
-                <input type="radio" name="player2" id="Trumpet2" onchange="changePlayer2()">
-                <label for="Trumpet2">Trumpet</label><br>
-            </div>
-            <div class="beginplayer">
-                <input type="radio" name="player2" id="boomer5492" onchange="changePlayer2()">
-                <label for="boomer5492">boomer549</label><br>
-                <input type="radio" name="player2" id="Daffy2" onchange="changePlayer2()">
-                <label for="Daffy2">Daffy</label><br>
-                <input type="radio" name="player2" id="elverdulerojorge2" onchange="changePlayer2()">
-                <label for="elverdulerojorge2">elverdulerojorge</label><br>
-                <input type="radio" name="player2" id="Horus the Holy2" onchange="changePlayer2()">
-                <label for="Horus the Holy2">Horus the Holy</label><br>
-                <input type="radio" name="player2" id="Kin_Replica2" onchange="changePlayer2()">
-                <label for="Kin_Replica2">Kin_Replica</label><br>
-                <input type="radio" name="player2" id="niccolaccio2" onchange="changePlayer2()">
-                <label for="niccolaccio2">niccolaccio</label><br>
-                <input type="radio" name="player2" id="Whitexcat2" onchange="changePlayer2()">
-                <label for="Whitexcat2">Whitexcat</label><br>
-                <input type="radio" name="player2" id="Wyld Kin2" onchange="changePlayer2()">
-                <label for="Wyld Kin2">Wyld Kin</label><br>
-            </div>
-            <div class="relplayer">
-                <input type="radio" name="player2" id="Big Pimpintosh2" onchange="changePlayer2()">
-                <label for="Big Pimpintosh2">Big Pimpintosh</label><br>
-                <input type="radio" name="player2" id="Kerpa2" onchange="changePlayer2()">
-                <label for="Kerpa2">Kerpa</label><br>
-                <input type="radio" name="player2" id="Necromanticer2" onchange="changePlayer2()">
-                <label for="Necromanticer2">Necromanticer</label><br>
-                <input type="radio" name="player2" id="Weasel2" onchange="changePlayer2()">
-                <label for="Weasel2">Weasel</label><br>
-            </div>
-            <div class="lowinterplayer">
-                <input type="radio" name="player2" id="Delthius2" onchange="changePlayer2()">
-                <label for="Delthius2">Delthius</label><br>
-                <input type="radio" name="player2" id="dzon2" onchange="changePlayer2()">
-                <label for="dzon2">dzon</label><br>
-                <input type="radio" name="player2" id="FleurDeLys2" onchange="changePlayer2()">
-                <label for="FleurDeLys2">FleurDeLys</label><br>
-                <input type="radio" name="player2" id="Kolaru2" onchange="changePlayer2()">
-                <label for="Kolaru2">Kolaru</label><br>
-                <input type="radio" name="player2" id="octapi2" onchange="changePlayer2()">
-                <label for="octapi2">octapi</label><br>
-                <input type="radio" name="player2" id="Pawulon2" onchange="changePlayer2()">
-                <label for="Pawulon2">Pawulon</label><br>
-                <input type="radio" name="player2" id="roman2" onchange="changePlayer2()">
-                <label for="roman2">roman</label><br>
-                <input type="radio" name="player2" id="Stoecker2" onchange="changePlayer2()">
-                <label for="Stoecker2">Stoecker</label><br>
-            </div>
-            </div>
-            
         </div>
-            <br>
-            <button type="button" onclick=resetScores()>Reset Score</button>
-            <br>
-        </p>
-            
         <!-- (above stuff maybe can dynamically load by league)    
             <p>
                 and other stuff like:
                 <li>player name colour radio input (icons get retrieved automatically based on the player name)</li>
             </p> -->
-        </form>
+        <!-- </form> -->
 
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/textFit.js"></script>
         <script>
