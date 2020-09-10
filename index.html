@@ -158,55 +158,67 @@
                   </div>
         
                 <!-- <form id="streamerinput" name="streamerinput"> -->
-                    <div id="titleselector">
-                        <p>
-                        Title Selector: <br>
-                        (changes the header text and filters dropdown boxes below) <br>
-                        <div class="row">
-                            <div class="column">
-                                <input type="radio" id="premier" name="league" value="Premier Division" onchange="leagueChange()">
-                                <label for="premier">Premier</label><br>
-                                <input type="radio" id="premierrel" name="league" value="Premier Relegation" onchange="leagueChange()">
-                                <label for="premierrel">Premier Relegations</label><br>
-                                <input type="radio" id="intermediate" name="league" value="Inter Division" onchange="leagueChange()">
-                                <label for="intermediate">Intermediate</label><br>
-                                <input type="radio" id="beginner" name="league" value="Beginner Division" onchange="leagueChange()">
-                                <label for="beginner">Beginner</label><br>
-                                <input type="radio" id="lowintermediate" name="league" value="Low Inter Division" onchange="leagueChange()">
-                                <label for="lowintermediate">Lower Intermediate</label><br>
-                                <input type="radio" id="noleag" name="league" value="" onchange="leagueChange()" checked>
-                                <label for="noleag">None</label><br><br>
-                            </div>
-                            
-                            <div class="column">
-                                <input type="radio" id="qf" name="stage" value=" - Quarter Final" onchange="leagueChange()">
-                                <label for="qf">Quarter Final</label><br>
-                                <input type="radio" id="sf" name="stage" value=" - Semi Final" onchange="leagueChange()">
-                                <label for="sf">Semi Final</label><br>
-                                <input type="radio" id="gf" name="stage" value=" - Grand Final" onchange="leagueChange()">
-                                <label for="gf">Grand Final</label><br>
-                                <input type="radio" id="tp" name="stage" value=" - Third Place" onchange="leagueChange()">
-                                <label for="tp">Third Place</label><br>
-                                <input type="radio" id="nostag" name="stage" value="" onchange="leagueChange()" checked>
-                                <label for="nostag">None</label>
-                            </div>
-            
-                            <div class="column">
-                                Best of: <br>
-                                <input type="radio" id="bo3" name="bo" value="3" onchange="boChange()">
-                                <label for="bo3">3</label><br>
-                                <input type="radio" id="bo5" name="bo" value="5" onchange="boChange()">
-                                <label for="bo5">5</label><br>
-                                <input type="radio" id="bo7" name="bo" value="7" onchange="boChange()">
-                                <label for="bo7">7</label><br>
-                                <input type="radio" id="bo9" name="bo" value="9" onchange="boChange()">
-                                <label for="bo9">9</label>
-                            </div>
-            
+                <div id="titleselector">
+                    <p>
+                    Title Selector: <br>
+                    (changes the header text and filters dropdown boxes below) <br>
+                    <div class="row">
+                        <div class="column">
+                            <input type="radio" id="premier" name="league" value="Premier Division" onchange="leagueChange()">
+                            <label for="premier">Premier</label><br>
+                            <input type="radio" id="premierrel" name="league" value="Premier Relegation" onchange="leagueChange()">
+                            <label for="premierrel">Premier Relegations</label><br>
+                            <input type="radio" id="intermediate" name="league" value="Inter Division" onchange="leagueChange()">
+                            <label for="intermediate">Intermediate</label><br>
+                            <input type="radio" id="beginner" name="league" value="Beginner Division" onchange="leagueChange()">
+                            <label for="beginner">Beginner</label><br>
+                            <input type="radio" id="lowintermediate" name="league" value="Low Inter Division" onchange="leagueChange()">
+                            <label for="lowintermediate">Lower Intermediate</label><br>
+                            <input type="radio" id="noleag" name="league" value="" onchange="leagueChange()" checked>
+                            <label for="noleag">None</label><br><br>
                         </div>
-                        </p>
-                    </div>
+                        
+                        <div class="column">
+                            <input type="radio" id="qf" name="stage" value=" - Quarter Final" onchange="leagueChange()">
+                            <label for="qf">Quarter Final</label><br>
+                            <input type="radio" id="sf" name="stage" value=" - Semi Final" onchange="leagueChange()">
+                            <label for="sf">Semi Final</label><br>
+                            <input type="radio" id="gf" name="stage" value=" - Grand Final" onchange="leagueChange()">
+                            <label for="gf">Grand Final</label><br>
+                            <input type="radio" id="tp" name="stage" value=" - Third Place" onchange="leagueChange()">
+                            <label for="tp">Third Place</label><br>
+                            <input type="radio" id="nostag" name="stage" value="" onchange="leagueChange()" checked>
+                            <label for="nostag">None</label>
+                        </div>
         
+                        <div class="column">
+                            Best of: <br>
+                            <input type="radio" id="bo3" name="bo" value="3" onchange="boChange()">
+                            <label for="bo3">3</label><br>
+                            <input type="radio" id="bo5" name="bo" value="5" onchange="boChange()">
+                            <label for="bo5">5</label><br>
+                            <input type="radio" id="bo7" name="bo" value="7" onchange="boChange()">
+                            <label for="bo7">7</label><br>
+                            <input type="radio" id="bo9" name="bo" value="9" onchange="boChange()">
+                            <label for="bo9">9</label>
+                        </div>
+        
+                    </div>
+                    </p>
+                </div>
+                
+                <div id="alternativeplayerselector">
+                    <div class="row">
+                        <div class="column" style="color:white; font-family: Arial, Helvetica, sans-serif;">
+                            <label for="player1textbox">Player 1</label>
+                            <input type="text" name="player1" id="player1textbox" oninput="changePlayer1text()">
+                        </div>
+                        <div class="column" style="color:white; font-family: Arial, Helvetica, sans-serif;">
+                            <label for="player1textbox">Player 2</label>
+                            <input type="text" name="player2" id="player2textbox" oninput="changePlayer2text()">
+                        </div>
+                    </div>
+                </div>
             </div>
                 <div class="column">
                     
@@ -590,6 +602,16 @@
                     }
                 }
                 document.getElementById("p2icon").innerHTML = `<img src="${idToPfpURL[playerId]}" onerror="this.style.display='none'" />`;
+            }
+
+            function changePlayer1text() {
+                var player = document.getElementById("player1textbox").value
+                document.getElementById("p1name").innerHTML = player.toUpperCase();
+            }
+
+            function changePlayer2text() {
+                var player = document.getElementById("player2textbox").value
+                document.getElementById("p2name").innerHTML = player.toUpperCase();
             }
 
             function resetScores() {
