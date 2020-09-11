@@ -171,20 +171,20 @@
                     (changes the header text and filters dropdown boxes below) <br>
                     <div class="row">
                         <div class="column">
-                            <input type="radio" id="premier" name="league" value="Premier Division" onchange="leagueChange()">
-                            <label for="premier">Premier Division</label><br>
-                            <input type="radio" id="premierrel" name="league" value="Premier Relegation" onchange="leagueChange()">
-                            <label for="premierrel">Premier Relegation</label><br>
-                            <input type="radio" id="intermediate" name="league" value="Intermediate Division" onchange="leagueChange()">
-                            <label for="intermediate">Inter Division</label><br>
-                            <input type="radio" id="lowintermediate" name="league" value="Lower Intermediate" onchange="leagueChange()">
-                            <label for="lowintermediate">Lower Intermediate</label><br>
-                            <input type="radio" id="beginner" name="league" value="Beginner Division" onchange="leagueChange()">
-                            <label for="beginner">Beginner Division</label><br>
-                            <input type="radio" id="magnificent" name="league" value="The Magnificent 21" onchange="leagueChange()">
-                            <label for="magnificent">The Magnificent 21</label><br>
-                            <input type="radio" id="noleag" name="league" value="" onchange="leagueChange()" checked>
-                            <label for="noleag">None</label><br><br>
+                            <input type="radio" id="premier-division" name="league" value="Premier Division" class="league" onchange="leagueChange()">
+                            <label for="premier-division">Premier Division</label><br>
+                            <input type="radio" id="premier-relegation" name="league" value="Premier Relegation" class="league" onchange="leagueChange()">
+                            <label for="premier-relegation">Premier Relegation</label><br>
+                            <input type="radio" id="intermediate-division" name="league" value="Intermediate Division" class="league" onchange="leagueChange()">
+                            <label for="intermediate-division">Inter Division</label><br>
+                            <input type="radio" id="lower-intermediate" name="league" value="Lower Intermediate" class="league" onchange="leagueChange()">
+                            <label for="lower-intermediate">Lower Intermediate</label><br>
+                            <input type="radio" id="beginner-division" name="league" value="Beginner Division" class="league" onchange="leagueChange()">
+                            <label for="beginner-division">Beginner Division</label><br>
+                            <input type="radio" id="the-magnificent-21" name="league" value="The Magnificent 21" class="league" onchange="leagueChange()">
+                            <label for="the-magnificent-21">The Magnificent 21</label><br>
+                            <input type="radio" id="no-league" name="league" value="" onchange="leagueChange()" class="league" checked>
+                            <label for="no-league">None</label><br><br>
                         </div>
                         
                         <div class="column">
@@ -230,200 +230,226 @@
                 </div>
             </div>
                 <div class="column">
-                    
-                    <div id="playerselector">
-                        <p>
-                        <div class="row">
-                        <div class="column">
-                        Player 1: <br>
-                        <div class="premierplayer">
-                            <input type="radio" name="player1" id="Arilou" onchange="changePlayer1()">
-                            <label for="Arilou">Arilou</label><br>
-                            <input type="radio" name="player1" id="Jakobi" onchange="changePlayer1()">
-                            <label for="Jakobi">Jakobi</label><br>
-                            <input type="radio" name="player1" id="JetEriksen" onchange="changePlayer1()">
-                            <label for="JetEriksen">JetEriksen</label><br>
-                            <input type="radio" name="player1" id="Melvinfro" onchange="changePlayer1()">
-                            <label for="Melvinfro">Melvinfro</label><br>
-                            <input type="radio" name="player1" id="Mishi" onchange="changePlayer1()">
-                            <label for="Mishi">Mishi</label><br>
-                            <input type="radio" name="player1" id="mocaccino" onchange="changePlayer1()">
-                            <label for="mocaccino">mocaccino</label><br>
-                            <input type="radio" name="player1" id="qq" onchange="changePlayer1()">
-                            <label for="qq">qq</label><br>
-                            <input type="radio" name="player1" id="The Gentleman" onchange="changePlayer1()">
-                            <label for="The Gentleman">The Gentleman</label><br>
-                        </div>
-                        <div class="interplayer">
-                            <input type="radio" name="player1" id="EELuminatus" onchange="changePlayer1()">
-                            <label for="EELuminatus">EELuminatus</label><br>
-                            <input type="radio" name="player1" id="Epicosity" onchange="changePlayer1()">
-                            <label for="Epicosity">Epicosity</label><br>
-                            <input type="radio" name="player1" id="Heartseed" onchange="changePlayer1()">
-                            <label for="Heartseed">Heartseed</label><br>
-                            <input type="radio" name="player1" id="Meek" onchange="changePlayer1()">
-                            <label for="Meek">Meek</label><br>
-                            <input type="radio" name="player1" id="Protokam" onchange="changePlayer1()">
-                            <label for="Protokam">Protokam</label><br>
-                            <input type="radio" name="player1" id="Satoros" onchange="changePlayer1()">
-                            <label for="Satoros">Satoros</label><br>
-                            <input type="radio" name="player1" id="Sulomon" onchange="changePlayer1()">
-                            <label for="Sulomon">Sulomon</label><br>
-                            <input type="radio" name="player1" id="Trumpet" onchange="changePlayer1()">
-                            <label for="Trumpet">Trumpet</label><br>
-                        </div>
-                        <div class="beginplayer">
-                            <input type="radio" name="player1" id="boomer549" onchange="changePlayer1()">
-                            <label for="boomer549">boomer549</label><br>
-                            <input type="radio" name="player1" id="Daffy" onchange="changePlayer1()">
-                            <label for="Daffy">Daffy</label><br>
-                            <input type="radio" name="player1" id="elverdulerojorge" onchange="changePlayer1()">
-                            <label for="elverdulerojorge">elverdulerojorge</label><br>
-                            <input type="radio" name="player1" id="Horus the Holy" onchange="changePlayer1()">
-                            <label for="Horus the Holy">Horus the Holy</label><br>
-                            <input type="radio" name="player1" id="Kin_Replica" onchange="changePlayer1()">
-                            <label for="Kin_Replica">Kin_Replica</label><br>
-                            <input type="radio" name="player1" id="niccolaccio" onchange="changePlayer1()">
-                            <label for="niccolaccio">niccolaccio</label><br>
-                            <input type="radio" name="player1" id="Whitexcat" onchange="changePlayer1()">
-                            <label for="Whitexcat">Whitexcat</label><br>
-                            <input type="radio" name="player1" id="Wyld Kin" onchange="changePlayer1()">
-                            <label for="Wyld Kin">Wyld Kin</label><br>
-                        </div>
-                        <div class="relplayer">
-                            <input type="radio" name="player1" id="Big Pimpintosh" onchange="changePlayer1()">
-                            <label for="Big Pimpintosh">Big Pimpintosh</label><br>
-                            <input type="radio" name="player1" id="Kerpa" onchange="changePlayer1()">
-                            <label for="Kerpa">Kerpa</label><br>
-                            <input type="radio" name="player1" id="Necromanticer" onchange="changePlayer1()">
-                            <label for="Necromanticer">Necromanticer</label><br>
-                            <input type="radio" name="player1" id="Weasel" onchange="changePlayer1()">
-                            <label for="Weasel">Weasel</label><br>
-                        </div>
-                        <div class="lowinterplayer">
-                            <input type="radio" name="player1" id="Delthius" onchange="changePlayer1()">
-                            <label for="Delthius">Delthius</label><br>
-                            <input type="radio" name="player1" id="dzon" onchange="changePlayer1()">
-                            <label for="dzon">dzon</label><br>
-                            <input type="radio" name="player1" id="FleurDeLys" onchange="changePlayer1()">
-                            <label for="FleurDeLys">FleurDeLys</label><br>
-                            <input type="radio" name="player1" id="Kolaru" onchange="changePlayer1()">
-                            <label for="Kolaru">Kolaru</label><br>
-                            <input type="radio" name="player1" id="octapi" onchange="changePlayer1()">
-                            <label for="octapi">octapi</label><br>
-                            <input type="radio" name="player1" id="Pawulon" onchange="changePlayer1()">
-                            <label for="Pawulon">Pawulon</label><br>
-                            <input type="radio" name="player1" id="roman" onchange="changePlayer1()">
-                            <label for="roman">roman</label><br>
-                            <input type="radio" name="player1" id="Stoecker" onchange="changePlayer1()">
-                            <label for="Stoecker">Stoecker</label><br>
-                        </div>
-                        </div>
-            
-                        <div class="column">
-                        Player 2: <br>
-                        <div class="premierplayer">
-                            <input type="radio" name="player2" id="Arilou2" onchange="changePlayer2()">
-                            <label for="Arilou2">Arilou</label><br>
-                            <input type="radio" name="player2" id="Jakobi2" onchange="changePlayer2()">
-                            <label for="Jakobi2">Jakobi</label><br>
-                            <input type="radio" name="player2" id="JetEriksen2" onchange="changePlayer2()">
-                            <label for="JetEriksen2">JetEriksen</label><br>
-                            <input type="radio" name="player2" id="Melvinfro2" onchange="changePlayer2()">
-                            <label for="Melvinfro2">Melvinfro</label><br>
-                            <input type="radio" name="player2" id="Mishi2" onchange="changePlayer2()">
-                            <label for="Mishi2">Mishi</label><br>
-                            <input type="radio" name="player2" id="mocaccino2" onchange="changePlayer2()">
-                            <label for="mocaccino2">mocaccino</label><br>
-                            <input type="radio" name="player2" id="qq2" onchange="changePlayer2()">
-                            <label for="qq2">qq</label><br>
-                            <input type="radio" name="player2" id="The Gentleman2" onchange="changePlayer2()">
-                            <label for="The Gentleman2">The Gentleman</label><br>
-                        </div>
-                        <div class="interplayer">
-                            <input type="radio" name="player2" id="EELuminatus2" onchange="changePlayer2()">
-                            <label for="EELuminatus2">EELuminatus</label><br>
-                            <input type="radio" name="player2" id="Epicosity2" onchange="changePlayer2()">
-                            <label for="Epicosity2">Epicosity</label><br>
-                            <input type="radio" name="player2" id="Heartseed2" onchange="changePlayer2()">
-                            <label for="Heartseed2">Heartseed</label><br>
-                            <input type="radio" name="player2" id="Meek2" onchange="changePlayer2()">
-                            <label for="Meek2">Meek</label><br>
-                            <input type="radio" name="player2" id="Protokam2" onchange="changePlayer2()">
-                            <label for="Protokam2">Protokam</label><br>
-                            <input type="radio" name="player2" id="Satoros2" onchange="changePlayer2()">
-                            <label for="Satoros2">Satoros</label><br>
-                            <input type="radio" name="player2" id="Sulomon2" onchange="changePlayer2()">
-                            <label for="Sulomon2">Sulomon</label><br>
-                            <input type="radio" name="player2" id="Trumpet2" onchange="changePlayer2()">
-                            <label for="Trumpet2">Trumpet</label><br>
-                        </div>
-                        <div class="beginplayer">
-                            <input type="radio" name="player2" id="boomer5492" onchange="changePlayer2()">
-                            <label for="boomer5492">boomer549</label><br>
-                            <input type="radio" name="player2" id="Daffy2" onchange="changePlayer2()">
-                            <label for="Daffy2">Daffy</label><br>
-                            <input type="radio" name="player2" id="elverdulerojorge2" onchange="changePlayer2()">
-                            <label for="elverdulerojorge2">elverdulerojorge</label><br>
-                            <input type="radio" name="player2" id="Horus the Holy2" onchange="changePlayer2()">
-                            <label for="Horus the Holy2">Horus the Holy</label><br>
-                            <input type="radio" name="player2" id="Kin_Replica2" onchange="changePlayer2()">
-                            <label for="Kin_Replica2">Kin_Replica</label><br>
-                            <input type="radio" name="player2" id="niccolaccio2" onchange="changePlayer2()">
-                            <label for="niccolaccio2">niccolaccio</label><br>
-                            <input type="radio" name="player2" id="Whitexcat2" onchange="changePlayer2()">
-                            <label for="Whitexcat2">Whitexcat</label><br>
-                            <input type="radio" name="player2" id="Wyld Kin2" onchange="changePlayer2()">
-                            <label for="Wyld Kin2">Wyld Kin</label><br>
-                        </div>
-                        <div class="relplayer">
-                            <input type="radio" name="player2" id="Big Pimpintosh2" onchange="changePlayer2()">
-                            <label for="Big Pimpintosh2">Big Pimpintosh</label><br>
-                            <input type="radio" name="player2" id="Kerpa2" onchange="changePlayer2()">
-                            <label for="Kerpa2">Kerpa</label><br>
-                            <input type="radio" name="player2" id="Necromanticer2" onchange="changePlayer2()">
-                            <label for="Necromanticer2">Necromanticer</label><br>
-                            <input type="radio" name="player2" id="Weasel2" onchange="changePlayer2()">
-                            <label for="Weasel2">Weasel</label><br>
-                        </div>
-                        <div class="lowinterplayer">
-                            <input type="radio" name="player2" id="Delthius2" onchange="changePlayer2()">
-                            <label for="Delthius2">Delthius</label><br>
-                            <input type="radio" name="player2" id="dzon2" onchange="changePlayer2()">
-                            <label for="dzon2">dzon</label><br>
-                            <input type="radio" name="player2" id="FleurDeLys2" onchange="changePlayer2()">
-                            <label for="FleurDeLys2">FleurDeLys</label><br>
-                            <input type="radio" name="player2" id="Kolaru2" onchange="changePlayer2()">
-                            <label for="Kolaru2">Kolaru</label><br>
-                            <input type="radio" name="player2" id="octapi2" onchange="changePlayer2()">
-                            <label for="octapi2">octapi</label><br>
-                            <input type="radio" name="player2" id="Pawulon2" onchange="changePlayer2()">
-                            <label for="Pawulon2">Pawulon</label><br>
-                            <input type="radio" name="player2" id="roman2" onchange="changePlayer2()">
-                            <label for="roman2">roman</label><br>
-                            <input type="radio" name="player2" id="Stoecker2" onchange="changePlayer2()">
-                            <label for="Stoecker2">Stoecker</label><br>
-                        </div>
-                        </div>
-                        
-                    </div>
-                        <br>
-                        <button type="button" onclick=resetScores()>Reset Score</button>
-                        <br>
-                    </p>
-                    </div>
-                </div>
-                
-        </div>
-        <!-- (above stuff maybe can dynamically load by league)    
-            <p>
-                and other stuff like:
-                <li>player name colour radio input (icons get retrieved automatically based on the player name)</li>
-            </p> -->
-        <!-- </form> -->
-
+		            <div id="playerselector">
+		                <div class="row">
+			                <div class="column">
+			                	Player 1: <br>
+			                	<div id="players1"></div>
+			                </div>
+			                <div class="column">
+					            Player 2: <br>
+					            <div id="players2"></div>
+			                </div>
+			            </div>
+		                <button type="button" onclick=resetScores()>Reset Score</button>
+		            </div>
+		        </div>
+		    </div>
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/textFit.js"></script>
         <script>
+        	var players = {
+				'anki': {
+					'name': 'Anki',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'arilou': {
+					'name': 'Arilou',
+					'leagues': [
+						'premier-division',
+						'the-magnificent-21'
+					]
+				},
+				'big-pimpintosh': {
+					'name': 'Big Pimpintosh',
+					'leagues': [
+						'premier-division',
+						'the-magnificent-21'
+					]
+				},
+				'daffy': {
+					'name': 'daffy',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'delthius': {
+					'name': 'Delthius',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'eeluminatus': {
+					'name': 'EELuminatus',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'elverdulerojorge': {
+					'name': 'elverdulerojorge',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'enamel': {
+					'name': 'Enamel',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'epicosity': {
+					'name': 'Epicosity',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'fleurdelys': {
+					'name': 'FleurDeLys',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'gigger-goris': {
+					'name': 'Gigger Goris',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'heartseed': {
+					'name': 'Heartseed',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'jakobi': {
+					'name': 'Jakobi',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'james': {
+					'name': 'James',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'jeteriksen': {
+					'name': 'JetEriksen',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'jvela': {
+					'name': 'Jvela',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'kerpa': {
+					'name': 'Kerpa',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'kolaru': {
+					'name': 'Kolaru',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'legomann96': {
+					'name': 'Legomann96',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'marmu': {
+					'name': 'Marmu',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'mocaccino': {
+					'name': 'mocaccino',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'premiumbow426': {
+					'name': 'PremiumBow426',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'qq': {
+					'name': 'qq',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'reben-lied': {
+					'name': 'Raben Lied',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'roman': {
+					'name': 'Roman',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'pigeon-rush': {
+					'name': 'Pigeon Rush',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'thesassymarquess': {
+					'name': 'TheSassyMarquess',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'snetch': {
+					'name': 'Snetch',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'thechild': {
+					'name': 'TheChild',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'thisguy': {
+					'name': 'ThisGuy',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'tiki-gray': {
+					'name': 'Tiki Gray',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'wyld-kin': {
+					'name': 'Wyld Kin',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'mrziggy': {
+					'name': 'MrZiggy',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				}
+			};
+			
             function leagueChange() {
                 // change the title first
                 var leagueselector = document.getElementsByName("league");
@@ -444,76 +470,24 @@
                         break;
                     }
                 }
+                showPlayers(document.querySelector('.league:checked').id);
 
                 document.getElementById("title").innerHTML = (league + stage).toUpperCase();
 
                 // change the title size dynamically
                 textFit(document.querySelector("#title"), {minFontSize:0, alignVert: true});
-
-                // change the player list shown
-                var playerIdToClass = {
-                    "premier": "premierplayer",
-                    "premierrel": "relplayer",
-                    "intermediate": "interplayer",
-                    "beginner": "beginplayer",
-                    "lowintermediate": "lowinterplayer",
-                    "noleag": ""
-                }
-
-                if (leagueId == "premier") {
-                    showPlayers(playerIdToClass["premier"])
-                    hidePlayers(playerIdToClass["premierrel"]);
-                    hidePlayers(playerIdToClass["intermediate"]);
-                    hidePlayers(playerIdToClass["beginner"]);
-                    hidePlayers(playerIdToClass["lowintermediate"]);
-                } else if (leagueId == "premierrel") {
-                    hidePlayers(playerIdToClass["premier"])
-                    showPlayers(playerIdToClass["premierrel"]);
-                    hidePlayers(playerIdToClass["intermediate"]);
-                    hidePlayers(playerIdToClass["beginner"]);
-                    hidePlayers(playerIdToClass["lowintermediate"]);
-                } else if (leagueId == "intermediate") {
-                    hidePlayers(playerIdToClass["premier"])
-                    hidePlayers(playerIdToClass["premierrel"]);
-                    showPlayers(playerIdToClass["intermediate"]);
-                    hidePlayers(playerIdToClass["beginner"]);
-                    hidePlayers(playerIdToClass["lowintermediate"]);
-                } else if (leagueId == "beginner") {
-                    hidePlayers(playerIdToClass["premier"])
-                    hidePlayers(playerIdToClass["premierrel"]);
-                    hidePlayers(playerIdToClass["intermediate"]);
-                    showPlayers(playerIdToClass["beginner"]);
-                    hidePlayers(playerIdToClass["lowintermediate"]);
-                } else if (leagueId == "lowintermediate") {
-                    hidePlayers(playerIdToClass["premier"])
-                    hidePlayers(playerIdToClass["premierrel"]);
-                    hidePlayers(playerIdToClass["intermediate"]);
-                    hidePlayers(playerIdToClass["beginner"]);
-                    showPlayers(playerIdToClass["lowintermediate"]);
-                } else if (leagueId == "noleag") {
-                    showPlayers(playerIdToClass["premier"])
-                    showPlayers(playerIdToClass["premierrel"]);
-                    showPlayers(playerIdToClass["intermediate"]);
-                    showPlayers(playerIdToClass["beginner"]);
-                    showPlayers(playerIdToClass["lowintermediate"]);
-                }
-
             }
 
-            function showPlayers(playerClass) {
-                var playersToShow = document.getElementsByClassName(playerClass);
+            function showPlayers(league) {
+                var playersToShow = Object.values(players).reduce((a, b) => (b.leagues.includes(league) && a.push(b.name), a), []);
 
-                for (let i = 0; i < playersToShow.length; i++) {
-                    playersToShow[i].style.display = "block";
-                }
-            }
+				document.getElementById('players1').innerHTML = '';
+				document.getElementById('players2').innerHTML = '';
 
-            function hidePlayers(playerClass) {
-                var playersToHide = document.getElementsByClassName(playerClass);
-
-                for (let i = 0; i < playersToHide.length; i++) {
-                    playersToHide[i].style.display = "none";
-                }
+                playersToShow.forEach(function(player) {
+                	document.getElementById('players1').innerHTML += '<input type="radio" name="player1" id="' + player + '" onchange="changePlayer1()"><label for="' + player + '">' + player + '</label><br>';
+                	document.getElementById('players2').innerHTML += '<input type="radio" name="player2" id="' + player + '2" onchange="changePlayer2()"><label for="' + player + '2">' + player + '</label><br>';
+                });
             }
 
             function boChange() {
@@ -544,46 +518,6 @@
 
             function decrementp2Score() {
                 document.getElementById("p2score").value--
-            }
-
-
-            idToPfpURL = {
-                "Arilou":"images/arilou.png",
-                "Jakobi":"https://cdn.discordapp.com/avatars/168111817489514496/6aca97e203c21883c1ff6f6af52c57e9.png",
-                "JetEriksen":"https://cdn.discordapp.com/avatars/155604773314232322/1a5bd3f060024ae4639afc3721a20f2e.png",
-                "Melvinfro":"https://cdn.discordapp.com/avatars/470976187817000960/703458f10652a60c2d2e8896e1c34ff8.png",
-                "Mishi":"images/mishi.png",
-                "mocaccino":"images/mocaccino.png",
-                "qq":"https://cdn.discordapp.com/avatars/256576958899421185/d419ffa8ce5ef765b2219274a835285b.png",
-                "The Gentleman":"images/thegentleman.png",
-                "EELuminatus":"https://cdn.discordapp.com/avatars/220804933769756672/3f20f15840fce53d9cfa0217cb9d564e.png",
-                "Epicosity":"https://cdn.discordapp.com/avatars/596570018595078155/4c160dc09f9f5b6ffeebc6254e26634d.png",
-                "Heartseed":"https://cdn.discordapp.com/avatars/142778020480942082/3de440b47a4387572c37cc25679ce3ff.png",
-                "Meek":"images/meek.png",
-                "Protokam":"https://cdn.discordapp.com/avatars/389233786518503425/2f9eff9561dd85a073587319eec27b6d.png",
-                "Satoros":"images/satoros.png",
-                "Sulomon":"images/sulomon.png",
-                "Trumpet":"images/trumpet.png",
-                "boomer549":"https://cdn.discordapp.com/avatars/216372992102498304/064b703a1f7faab1039f2137c2824a3b.png",
-                "Daffy":"https://cdn.discordapp.com/avatars/581195665187668018/15c214bbf95cbf132657a491915710fc.png",
-                "elverdulerojorge":"https://discord.com/assets/1cbd08c76f8af6dddce02c5138971129.png",
-                "Horus the Holy":"https://cdn.discordapp.com/avatars/182629275516665857/82b85961000586114b473f461e20deb7.png",
-                "Kin_Replica":"https://cdn.discordapp.com/avatars/135246997883060224/b79ceb41e08864e081f7453b56f11a67.png",
-                "niccolaccio":"https://discord.com/assets/1cbd08c76f8af6dddce02c5138971129.png",
-                "Whitexcat":"https://cdn.discordapp.com/avatars/170711129130139648/e40c4c69431937298a032413c6b7dba2.png",
-                "Wyld Kin":"https://cdn.discordapp.com/avatars/459701156231512065/9f1567637eee35f0ecbb635f351a9467.png",
-                "Big Pimpintosh":"images/bigpimpintosh.png",
-                "Kerpa":"https://cdn.discordapp.com/avatars/201794862805155840/9e6b8992fc18bc16ad5d3fa9fa0948c9.png",
-                "Necromanticer":"images/necromanticer.png",
-                "Weasel":"images/weasel.png",
-                "Delthius":"https://cdn.discordapp.com/avatars/264484977868144670/40e706b48d053b044aa13f65d1eaefff.png",
-                "dzon":"https://cdn.discordapp.com/avatars/374628283117076490/a53d16bbf37bf9b665f0153c16a8ebe5.png",
-                "FleurDeLys":"https://cdn.discordapp.com/avatars/625709316887937037/20f72d7f4992c119943a8698bd344016.png",
-                "Kolaru":"https://cdn.discordapp.com/avatars/314190533301895178/000f5820a123bb48897b3ca2b96a0786.png",
-                "octapi":"https://cdn.discordapp.com/avatars/221731646267850754/b286dc4b1dd3aa160f834864c11d0738.png",
-                "Pawulon":"https://cdn.discordapp.com/avatars/282678880978862090/9238bda77b1d06736833fe11d0ea4c66.png",
-                "roman":"https://cdn.discordapp.com/avatars/517323127626268673/5cbeaea5439043837de0e076fa63cda7.png",
-                "Stoecker":"https://cdn.discordapp.com/avatars/224307627746656257/1cda10b4bec69131229de60aa17c0661.png"
             }
 
             function changePlayer1() {
@@ -714,8 +648,45 @@
                     div2.classList.add("yellow");
                 }
             })
-
-
+            
+            idToPfpURL = {
+                "Arilou":"images/arilou.png",
+                "Jakobi":"https://cdn.discordapp.com/avatars/168111817489514496/6aca97e203c21883c1ff6f6af52c57e9.png",
+                "JetEriksen":"https://cdn.discordapp.com/avatars/155604773314232322/1a5bd3f060024ae4639afc3721a20f2e.png",
+                "Melvinfro":"https://cdn.discordapp.com/avatars/470976187817000960/703458f10652a60c2d2e8896e1c34ff8.png",
+                "Mishi":"images/mishi.png",
+                "mocaccino":"images/mocaccino.png",
+                "qq":"https://cdn.discordapp.com/avatars/256576958899421185/d419ffa8ce5ef765b2219274a835285b.png",
+                "The Gentleman":"images/thegentleman.png",
+                "EELuminatus":"https://cdn.discordapp.com/avatars/220804933769756672/3f20f15840fce53d9cfa0217cb9d564e.png",
+                "Epicosity":"https://cdn.discordapp.com/avatars/596570018595078155/4c160dc09f9f5b6ffeebc6254e26634d.png",
+                "Heartseed":"https://cdn.discordapp.com/avatars/142778020480942082/3de440b47a4387572c37cc25679ce3ff.png",
+                "Meek":"images/meek.png",
+                "Protokam":"https://cdn.discordapp.com/avatars/389233786518503425/2f9eff9561dd85a073587319eec27b6d.png",
+                "Satoros":"images/satoros.png",
+                "Sulomon":"images/sulomon.png",
+                "Trumpet":"images/trumpet.png",
+                "boomer549":"https://cdn.discordapp.com/avatars/216372992102498304/064b703a1f7faab1039f2137c2824a3b.png",
+                "Daffy":"https://cdn.discordapp.com/avatars/581195665187668018/15c214bbf95cbf132657a491915710fc.png",
+                "elverdulerojorge":"https://discord.com/assets/1cbd08c76f8af6dddce02c5138971129.png",
+                "Horus the Holy":"https://cdn.discordapp.com/avatars/182629275516665857/82b85961000586114b473f461e20deb7.png",
+                "Kin_Replica":"https://cdn.discordapp.com/avatars/135246997883060224/b79ceb41e08864e081f7453b56f11a67.png",
+                "niccolaccio":"https://discord.com/assets/1cbd08c76f8af6dddce02c5138971129.png",
+                "Whitexcat":"https://cdn.discordapp.com/avatars/170711129130139648/e40c4c69431937298a032413c6b7dba2.png",
+                "Wyld Kin":"https://cdn.discordapp.com/avatars/459701156231512065/9f1567637eee35f0ecbb635f351a9467.png",
+                "Big Pimpintosh":"images/bigpimpintosh.png",
+                "Kerpa":"https://cdn.discordapp.com/avatars/201794862805155840/9e6b8992fc18bc16ad5d3fa9fa0948c9.png",
+                "Necromanticer":"images/necromanticer.png",
+                "Weasel":"images/weasel.png",
+                "Delthius":"https://cdn.discordapp.com/avatars/264484977868144670/40e706b48d053b044aa13f65d1eaefff.png",
+                "dzon":"https://cdn.discordapp.com/avatars/374628283117076490/a53d16bbf37bf9b665f0153c16a8ebe5.png",
+                "FleurDeLys":"https://cdn.discordapp.com/avatars/625709316887937037/20f72d7f4992c119943a8698bd344016.png",
+                "Kolaru":"https://cdn.discordapp.com/avatars/314190533301895178/000f5820a123bb48897b3ca2b96a0786.png",
+                "octapi":"https://cdn.discordapp.com/avatars/221731646267850754/b286dc4b1dd3aa160f834864c11d0738.png",
+                "Pawulon":"https://cdn.discordapp.com/avatars/282678880978862090/9238bda77b1d06736833fe11d0ea4c66.png",
+                "roman":"https://cdn.discordapp.com/avatars/517323127626268673/5cbeaea5439043837de0e076fa63cda7.png",
+                "Stoecker":"https://cdn.discordapp.com/avatars/224307627746656257/1cda10b4bec69131229de60aa17c0661.png"
+            }
         </script>
     </body>
 </html>
