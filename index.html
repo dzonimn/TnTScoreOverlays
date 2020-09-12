@@ -202,13 +202,13 @@
         
                         <div class="column">
                             Best of: <br>
-                            <input type="radio" name="bo" class="bo" id="best-of-3" value="3">
+                            <input type="radio" name="bestOf" class="bestOf" id="best-of-3" value="3">
                             <label for="best-of-3">3</label><br>
-                            <input type="radio" name="bo" class="bo" id="best-of-5" value="5">
+                            <input type="radio" name="bestOf" class="bestOf" id="best-of-5" value="5">
                             <label for="best-of-5">5</label><br>
-                            <input type="radio" name="bo" class="bo" id="best-of-7" value="7">
+                            <input type="radio" name="bestOf" class="bestOf" id="best-of-7" value="7">
                             <label for="best-of-7">7</label><br>
-                            <input type="radio" name="bo" class="bo" id="best-of-9" value="9">
+                            <input type="radio" name="bestOf" class="bestOf" id="best-of-9" value="9">
                             <label for="best-of-9">9</label>
                         </div>
         
@@ -247,9 +247,15 @@
 		    </div>
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/textFit.js"></script>
         <script>
+        	document.querySelectorAll('.league, .stage').forEach(function(element) {
+        		element.addEventListener('click', changeLeague);
+        	});
         	
+        	document.querySelectorAll('.bestOf').forEach(function(element) {
+        		element.addEventListener('click', changeBestOf);
+        	});
         
-            function leagueChange() {
+            function changeLeague() {
                 // change the title first
                 var leagueselector = document.getElementsByName("league");
                 var stageselector = document.getElementsByName("stage")
@@ -289,8 +295,8 @@
                 });
             }
 
-            function boChange() {
-                var boselector = document.getElementsByName("bo");
+            function changeBestOf() {
+                var boselector = document.getElementsByName("bestOf");
                 var bonumber;
 
                 for (let i = 0; i < boselector.length; i++) {
