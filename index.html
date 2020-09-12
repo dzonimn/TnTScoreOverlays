@@ -171,45 +171,45 @@
                     (changes the header text and filters dropdown boxes below) <br>
                     <div class="row">
                         <div class="column">
-                            <input type="radio" id="premier-division" name="league" value="Premier Division" class="league" onchange="leagueChange()">
+                            <input type="radio" name="league" class="league" id="premier-division" value="Premier Division">
                             <label for="premier-division">Premier Division</label><br>
-                            <input type="radio" id="premier-relegation" name="league" value="Premier Relegation" class="league" onchange="leagueChange()">
+                            <input type="radio" name="league" class="league" id="premier-relegation" value="Premier Relegation">
                             <label for="premier-relegation">Premier Relegation</label><br>
-                            <input type="radio" id="intermediate-division" name="league" value="Intermediate Division" class="league" onchange="leagueChange()">
+                            <input type="radio" name="league" class="league" id="intermediate-division" value="Intermediate Division">
                             <label for="intermediate-division">Inter Division</label><br>
-                            <input type="radio" id="lower-intermediate" name="league" value="Lower Intermediate" class="league" onchange="leagueChange()">
+                            <input type="radio" name="league" class="league" id="lower-intermediate" value="Lower Intermediate">
                             <label for="lower-intermediate">Lower Intermediate</label><br>
-                            <input type="radio" id="beginner-division" name="league" value="Beginner Division" class="league" onchange="leagueChange()">
+                            <input type="radio" name="league" class="league" id="beginner-division" value="Beginner Division">
                             <label for="beginner-division">Beginner Division</label><br>
-                            <input type="radio" id="the-magnificent-21" name="league" value="The Magnificent 21" class="league" onchange="leagueChange()">
+                            <input type="radio" name="league" class="league" id="the-magnificent-21" value="The Magnificent 21">
                             <label for="the-magnificent-21">The Magnificent 21</label><br>
-                            <input type="radio" id="no-league" name="league" value="" onchange="leagueChange()" class="league" checked>
+                            <input type="radio" name="league" class="league" id="no-league" value="" checked>
                             <label for="no-league">None</label><br><br>
                         </div>
                         
                         <div class="column">
-                            <input type="radio" id="qf" name="stage" value=" - Quarter Final" onchange="leagueChange()">
-                            <label for="qf">Quarter Final</label><br>
-                            <input type="radio" id="sf" name="stage" value=" - Semi Final" onchange="leagueChange()">
-                            <label for="sf">Semi Final</label><br>
-                            <input type="radio" id="gf" name="stage" value=" - Final" onchange="leagueChange()">
-                            <label for="gf">Final</label><br>
-                            <input type="radio" id="tp" name="stage" value=" - Third Place" onchange="leagueChange()">
-                            <label for="tp">Third Place</label><br>
-                            <input type="radio" id="nostag" name="stage" value="" onchange="leagueChange()" checked>
-                            <label for="nostag">None</label>
+                            <input type="radio" name="stage" class="stage" id="quarter-final" value=" - Quarter Final">
+                            <label for="quarter-final">Quarter Final</label><br>
+                            <input type="radio" name="stage" class="stage" id="semi-final" value=" - Semi Final">
+                            <label for="semi-final">Semi Final</label><br>
+                            <input type="radio" name="stage" class="stage" id="final" value=" - Final">
+                            <label for="final">Final</label><br>
+                            <input type="radio" name="stage" class="stage" id="third-place" value=" - Third Place">
+                            <label for="third-place">Third Place</label><br>
+                            <input type="radio" name="stage" class="stage" id="no-stage" value="" checked>
+                            <label for="no-stage">None</label>
                         </div>
         
                         <div class="column">
                             Best of: <br>
-                            <input type="radio" id="bo3" name="bo" value="3" onchange="boChange()">
-                            <label for="bo3">3</label><br>
-                            <input type="radio" id="bo5" name="bo" value="5" onchange="boChange()">
-                            <label for="bo5">5</label><br>
-                            <input type="radio" id="bo7" name="bo" value="7" onchange="boChange()">
-                            <label for="bo7">7</label><br>
-                            <input type="radio" id="bo9" name="bo" value="9" onchange="boChange()">
-                            <label for="bo9">9</label>
+                            <input type="radio" name="bo" class="bo" id="best-of-3" value="3">
+                            <label for="best-of-3">3</label><br>
+                            <input type="radio" name="bo" class="bo" id="best-of-5" value="5">
+                            <label for="best-of-5">5</label><br>
+                            <input type="radio" name="bo" class="bo" id="best-of-7" value="7">
+                            <label for="best-of-7">7</label><br>
+                            <input type="radio" name="bo" class="bo" id="best-of-9" value="9">
+                            <label for="best-of-9">9</label>
                         </div>
         
                     </div>
@@ -247,209 +247,8 @@
 		    </div>
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/textFit.js"></script>
         <script>
-        	var players = {
-				'anki': {
-					'name': 'Anki',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'arilou': {
-					'name': 'Arilou',
-					'leagues': [
-						'premier-division',
-						'the-magnificent-21'
-					]
-				},
-				'big-pimpintosh': {
-					'name': 'Big Pimpintosh',
-					'leagues': [
-						'premier-division',
-						'the-magnificent-21'
-					]
-				},
-				'daffy': {
-					'name': 'daffy',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'delthius': {
-					'name': 'Delthius',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'eeluminatus': {
-					'name': 'EELuminatus',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'elverdulerojorge': {
-					'name': 'elverdulerojorge',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'enamel': {
-					'name': 'Enamel',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'epicosity': {
-					'name': 'Epicosity',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'fleurdelys': {
-					'name': 'FleurDeLys',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'gigger-goris': {
-					'name': 'Gigger Goris',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'heartseed': {
-					'name': 'Heartseed',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'jakobi': {
-					'name': 'Jakobi',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'james': {
-					'name': 'James',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'jeteriksen': {
-					'name': 'JetEriksen',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'jvela': {
-					'name': 'Jvela',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'kerpa': {
-					'name': 'Kerpa',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'kolaru': {
-					'name': 'Kolaru',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'legomann96': {
-					'name': 'Legomann96',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'marmu': {
-					'name': 'Marmu',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'mocaccino': {
-					'name': 'mocaccino',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'premiumbow426': {
-					'name': 'PremiumBow426',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'qq': {
-					'name': 'qq',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'reben-lied': {
-					'name': 'Raben Lied',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'roman': {
-					'name': 'Roman',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'pigeon-rush': {
-					'name': 'Pigeon Rush',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'thesassymarquess': {
-					'name': 'TheSassyMarquess',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'snetch': {
-					'name': 'Snetch',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'thechild': {
-					'name': 'TheChild',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'thisguy': {
-					'name': 'ThisGuy',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'tiki-gray': {
-					'name': 'Tiki Gray',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'wyld-kin': {
-					'name': 'Wyld Kin',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				},
-				'mrziggy': {
-					'name': 'MrZiggy',
-					'leagues': [
-						'the-magnificent-21'
-					]
-				}
-			};
-			
+        	
+        
             function leagueChange() {
                 // change the title first
                 var leagueselector = document.getElementsByName("league");
@@ -687,6 +486,209 @@
                 "roman":"https://cdn.discordapp.com/avatars/517323127626268673/5cbeaea5439043837de0e076fa63cda7.png",
                 "Stoecker":"https://cdn.discordapp.com/avatars/224307627746656257/1cda10b4bec69131229de60aa17c0661.png"
             }
+            
+            var players = {
+				'anki': {
+					'name': 'Anki',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'arilou': {
+					'name': 'Arilou',
+					'leagues': [
+						'premier-division',
+						'the-magnificent-21'
+					]
+				},
+				'big-pimpintosh': {
+					'name': 'Big Pimpintosh',
+					'leagues': [
+						'premier-division',
+						'the-magnificent-21'
+					]
+				},
+				'daffy': {
+					'name': 'daffy',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'delthius': {
+					'name': 'Delthius',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'eeluminatus': {
+					'name': 'EELuminatus',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'elverdulerojorge': {
+					'name': 'elverdulerojorge',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'enamel': {
+					'name': 'Enamel',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'epicosity': {
+					'name': 'Epicosity',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'fleurdelys': {
+					'name': 'FleurDeLys',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'gigger-goris': {
+					'name': 'Gigger Goris',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'heartseed': {
+					'name': 'Heartseed',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'jakobi': {
+					'name': 'Jakobi',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'james': {
+					'name': 'James',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'jeteriksen': {
+					'name': 'JetEriksen',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'jvela': {
+					'name': 'Jvela',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'kerpa': {
+					'name': 'Kerpa',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'kolaru': {
+					'name': 'Kolaru',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'legomann96': {
+					'name': 'Legomann96',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'marmu': {
+					'name': 'Marmu',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'mocaccino': {
+					'name': 'mocaccino',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'premiumbow426': {
+					'name': 'PremiumBow426',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'qq': {
+					'name': 'qq',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'reben-lied': {
+					'name': 'Raben Lied',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'roman': {
+					'name': 'Roman',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'pigeon-rush': {
+					'name': 'Pigeon Rush',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'thesassymarquess': {
+					'name': 'TheSassyMarquess',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'snetch': {
+					'name': 'Snetch',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'thechild': {
+					'name': 'TheChild',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'thisguy': {
+					'name': 'ThisGuy',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'tiki-gray': {
+					'name': 'Tiki Gray',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'wyld-kin': {
+					'name': 'Wyld Kin',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				},
+				'mrziggy': {
+					'name': 'MrZiggy',
+					'leagues': [
+						'the-magnificent-21'
+					]
+				}
+			};
         </script>
     </body>
 </html>
