@@ -186,7 +186,6 @@
                             <input type="radio" name="league" class="league" id="no-league" value="" checked>                           
                             <label for="no-league">None</label><br><br>
                         </div>
-                        
                         <div class="column">
                         	<input type="radio" name="stage" class="stage" id="round-of-16" value=" - Round of 16">
                             <label for="round-of-16">Round of 16</label><br>
@@ -201,7 +200,6 @@
                             <input type="radio" name="stage" class="stage" id="no-stage" value="" checked>
                             <label for="no-stage">None</label>
                         </div>
-        
                         <div class="column">
                             Best of: <br>
                             <input type="radio" name="bestOf" class="bestOf" id="best-of-3" value="3">
@@ -213,11 +211,9 @@
                             <input type="radio" name="bestOf" class="bestOf" id="best-of-9" value="9">
                             <label for="best-of-9">9</label>
                         </div>
-        
                     </div>
                     </p>
                 </div>
-                
                 <div id="alternativeplayerselector">
                     <div class="row">
                         <div class="column">
@@ -231,22 +227,22 @@
                     </div>
                 </div>
             </div>
-                <div class="column">
-		            <div id="playerselector">
-		                <div class="row">
-			                <div class="column">
-			                	Player 1: <br>
-			                	<div id="players1"></div>
-			                </div>
-			                <div class="column">
-					            Player 2: <br>
-					            <div id="players2"></div>
-			                </div>
-			            </div>
-		                <button type="button" onclick=resetScores()>Reset Score</button>
+            <div class="column">
+	            <div id="playerselector">
+	                <div class="row">
+		                <div class="column">
+		                	Player 1: <br>
+		                	<div id="players1"></div>
+		                </div>
+		                <div class="column">
+				            Player 2: <br>
+				            <div id="players2"></div>
+		                </div>
 		            </div>
-		        </div>
-		    </div>
+	                <button type="button" onclick=resetScores()>Reset Score</button>
+	            </div>
+	        </div>
+	    </div>
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/textFit.js"></script>
         <script>
         	document.querySelectorAll('.league, .stage').forEach(function(element) {
@@ -286,14 +282,14 @@
             }
 
             function showPlayers(league) {
-                var playersToShow = Object.values(players).reduce((a, b) => (b.leagues.includes(league) && a.push(b.name), a), []);
+                var playersToShow = Object.entries(players).reduce((a, b) => (b[1].leagues.includes(league) && a.push([b[0], b[1].name]), a), []);
 
 				document.getElementById('players1').innerHTML = '';
 				document.getElementById('players2').innerHTML = '';
 
                 playersToShow.forEach(function(player) {
-                	document.getElementById('players1').innerHTML += '<input type="radio" name="player1" id="' + player + '" onchange="changePlayer1()"><label for="' + player + '">' + player + '</label><br>';
-                	document.getElementById('players2').innerHTML += '<input type="radio" name="player2" id="' + player + '2" onchange="changePlayer2()"><label for="' + player + '2">' + player + '</label><br>';
+                	document.getElementById('players1').innerHTML += '<label><input type="radio" name="player1" onchange="changePlayer1(event)" data-player-id="' + player[0] + '" data-player-name="' + player[1] + '">' + player[1] + '</label><br>';
+                	document.getElementById('players2').innerHTML += '<label><input type="radio" name="player2" onchange="changePlayer2(event)" data-player-id="' + player[0] + '" data-player-name="' + player[1] + '">' + player[1] + '</label><br>';
                 });
             }
 
@@ -327,31 +323,20 @@
                 document.getElementById("p2score").value--
             }
 
-            function changePlayer1() {
-                var player = document.getElementsByName("player1")
-                for (let i = 0; i < player.length; i++) {
-                    if (player[i].checked) {
-                        playerId = player[i].id
-                        document.getElementById("p1name").innerHTML = playerId.toUpperCase();
-                        break;
-                    }
-                }
-                // TODO:
-                // eventually should replace this with just referencing 'image/picture.png'
-                // but right now trying to fix a problem with minimal effort
-                document.getElementById("p1icon").innerHTML = `<img src="${idToPfpURL[playerId]}" onerror="this.style.display='none'" />`;
+            function changePlayer1(event) {
+            	let playerAvatar = document.querySelector('#p1icon');
+            	let playerName = document.querySelector('#p1name');
+            	
+            	playerAvatar.innerHTML = `<img src="https://raw.githubusercontent.com/toothandtailchampionship/players-avatars/master/${event.target.dataset.playerId}.png" onerror="this.style.display='none'" />`;
+                playerName.innerHTML = event.target.dataset.playerName;
             }
 
-            function changePlayer2() {
-                var player = document.getElementsByName("player2")
-                for (let i = 0; i < player.length; i++) {
-                    if (player[i].checked) {
-                        playerId = player[i].id.slice(0, -1) 
-                        document.getElementById("p2name").innerHTML = playerId.toUpperCase();
-                        break;
-                    }
-                }
-                document.getElementById("p2icon").innerHTML = `<img src="${idToPfpURL[playerId]}" onerror="this.style.display='none'" />`;
+            function changePlayer2(event) {
+                let playerAvatar = document.querySelector('#p2icon');
+            	let playerName = document.querySelector('#p2name');
+            	
+            	playerAvatar.innerHTML = `<img src="https://raw.githubusercontent.com/toothandtailchampionship/players-avatars/master/${event.target.dataset.playerId}.png" onerror="this.style.display='none'" />`;
+                playerName.innerHTML = event.target.dataset.playerName;
             }
 
             function changePlayer1text() {
@@ -455,45 +440,6 @@
                     div2.classList.add("yellow");
                 }
             })
-            
-            idToPfpURL = {
-                "Arilou":"images/arilou.png",
-                "Jakobi":"https://cdn.discordapp.com/avatars/168111817489514496/6aca97e203c21883c1ff6f6af52c57e9.png",
-                "JetEriksen":"https://cdn.discordapp.com/avatars/155604773314232322/1a5bd3f060024ae4639afc3721a20f2e.png",
-                "Melvinfro":"https://cdn.discordapp.com/avatars/470976187817000960/703458f10652a60c2d2e8896e1c34ff8.png",
-                "Mishi":"images/mishi.png",
-                "mocaccino":"images/mocaccino.png",
-                "qq":"https://cdn.discordapp.com/avatars/256576958899421185/d419ffa8ce5ef765b2219274a835285b.png",
-                "The Gentleman":"images/thegentleman.png",
-                "EELuminatus":"https://cdn.discordapp.com/avatars/220804933769756672/3f20f15840fce53d9cfa0217cb9d564e.png",
-                "Epicosity":"https://cdn.discordapp.com/avatars/596570018595078155/4c160dc09f9f5b6ffeebc6254e26634d.png",
-                "Heartseed":"https://cdn.discordapp.com/avatars/142778020480942082/3de440b47a4387572c37cc25679ce3ff.png",
-                "Meek":"images/meek.png",
-                "Protokam":"https://cdn.discordapp.com/avatars/389233786518503425/2f9eff9561dd85a073587319eec27b6d.png",
-                "Satoros":"images/satoros.png",
-                "Sulomon":"images/sulomon.png",
-                "Trumpet":"images/trumpet.png",
-                "boomer549":"https://cdn.discordapp.com/avatars/216372992102498304/064b703a1f7faab1039f2137c2824a3b.png",
-                "Raton":"https://cdn.discordapp.com/avatars/581195665187668018/15c214bbf95cbf132657a491915710fc.png",
-                "elverdulerojorge":"https://discord.com/assets/1cbd08c76f8af6dddce02c5138971129.png",
-                "Horus the Holy":"https://cdn.discordapp.com/avatars/182629275516665857/82b85961000586114b473f461e20deb7.png",
-                "Kin_Replica":"https://cdn.discordapp.com/avatars/135246997883060224/b79ceb41e08864e081f7453b56f11a67.png",
-                "niccolaccio":"https://discord.com/assets/1cbd08c76f8af6dddce02c5138971129.png",
-                "Whitexcat":"https://cdn.discordapp.com/avatars/170711129130139648/e40c4c69431937298a032413c6b7dba2.png",
-                "Wyld Kin":"https://cdn.discordapp.com/avatars/459701156231512065/9f1567637eee35f0ecbb635f351a9467.png",
-                "Big Pimpintosh":"images/bigpimpintosh.png",
-                "Kerpa":"https://cdn.discordapp.com/avatars/201794862805155840/9e6b8992fc18bc16ad5d3fa9fa0948c9.png",
-                "Necromanticer":"images/necromanticer.png",
-                "Weasel":"images/weasel.png",
-                "Delthius":"https://cdn.discordapp.com/avatars/264484977868144670/40e706b48d053b044aa13f65d1eaefff.png",
-                "dzon":"https://cdn.discordapp.com/avatars/374628283117076490/a53d16bbf37bf9b665f0153c16a8ebe5.png",
-                "FleurDeLys":"https://cdn.discordapp.com/avatars/625709316887937037/20f72d7f4992c119943a8698bd344016.png",
-                "Kolaru":"https://cdn.discordapp.com/avatars/314190533301895178/000f5820a123bb48897b3ca2b96a0786.png",
-                "octapi":"https://cdn.discordapp.com/avatars/221731646267850754/b286dc4b1dd3aa160f834864c11d0738.png",
-                "Pawulon":"https://cdn.discordapp.com/avatars/282678880978862090/9238bda77b1d06736833fe11d0ea4c66.png",
-                "roman":"https://cdn.discordapp.com/avatars/517323127626268673/5cbeaea5439043837de0e076fa63cda7.png",
-                "Stoecker":"https://cdn.discordapp.com/avatars/224307627746656257/1cda10b4bec69131229de60aa17c0661.png"
-            }
             
             var players = {
 				'anki': {
