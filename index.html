@@ -328,7 +328,7 @@
             	let playerName = document.querySelector('#p1name');
             	
             	playerAvatar.innerHTML = `<img src="https://raw.githubusercontent.com/toothandtailchampionship/players-avatars/master/${event.target.dataset.playerId}.png" onerror="this.style.display='none'" />`;
-                playerName.innerHTML = event.target.dataset.playerName;
+                playerName.innerHTML = event.target.dataset.playerName.toUpperCase();
             }
 
             function changePlayer2(event) {
@@ -336,7 +336,7 @@
             	let playerName = document.querySelector('#p2name');
             	
             	playerAvatar.innerHTML = `<img src="https://raw.githubusercontent.com/toothandtailchampionship/players-avatars/master/${event.target.dataset.playerId}.png" onerror="this.style.display='none'" />`;
-                playerName.innerHTML = event.target.dataset.playerName;
+                playerName.innerHTML = event.target.dataset.playerName.toUpperCase();
             }
 
             function changePlayer1text() {
